@@ -1,4 +1,5 @@
 module.exports=function connection(mongoose, config, options) {
+    console.log('config.mongo.uri ',config.mongo.uri)
     function connectToMongo() {
         mongoose
             .connect(config.mongo.uri, options)

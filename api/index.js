@@ -47,9 +47,9 @@ app.post('/api/upload', upload.single('file'),(req,res)=>{
 
     }
 })
-app.use('/back/users',userRoute);
-app.use('/back/auth',authRoute);
-app.use('/back/posts',postRoute);
+app.use('/api/users',userRoute);
+app.use('/api/auth',authRoute);
+app.use('/api/posts',postRoute);
 
 
 app.listen(8800,()=>{
