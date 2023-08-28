@@ -1,4 +1,6 @@
-let userDb = require('../../../application/repositories/userRepositoryMongoDB');
+const User =require('../../../framworks/database/mongoDB/models/User')
+let userDb = require('../../../application/repositories/userRepository');
+
 
 const { createUserSchema, updateUserSchema,deleteUserSchema } = require('../../../validations/schema/user');
 
@@ -12,8 +14,8 @@ const findUserUseCase=require('../../../application/use_cases/user/findUser')({u
 const getFriendsUseCase=require('../../../application/use_cases/user/getFriends')({userDb});
 const followUserUseCase=require('../../../application/use_cases/user/followUser')({userDb});
 const unfollowUserUseCase=require('../../../application/use_cases/user/unfollowUser')({userDb});
-
 const updateUserUseCase=require('../../../application/use_cases/user/updateUser')({userDb});
+
 const userController = require('./userController');
 
 const register = userController.register(registerUsecase);

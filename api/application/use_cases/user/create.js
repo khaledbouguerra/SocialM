@@ -6,7 +6,7 @@ const bcrypt = require("bcrypt");
 const create = ({ userDb, createValidation }) => async (params) => {
     try {
         console.log('params ',params);
-        let validateSchema = await createValidation(params);
+        const validateSchema = await createValidation(params);
 
         if (!validateSchema.isValid) {
             return response.validationError({ message: validateSchema.message });
@@ -20,7 +20,7 @@ const create = ({ userDb, createValidation }) => async (params) => {
         const newUser = new User({
             username: params.username, email: params.email, password: hashedPassword
         })
-        let user = await userDb.create(newUser);
+        const user = await userDb.create(newUser);
         console.log("In DB", newUser, user);
         return response.success({ data: user });
     } catch (error) {

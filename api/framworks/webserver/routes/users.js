@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {deleteUser, findUser, getFriends, followUser, unfollowUser, updateUser} = require("../adapters/controllers/user");
+const {deleteUser, findUser, getFriends, followUser, unfollowUser, updateUser} = require("../../../adapters/controllers/user");
 
 
 //update user

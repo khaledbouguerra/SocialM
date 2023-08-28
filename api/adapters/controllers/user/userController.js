@@ -1,4 +1,3 @@
-const {response} = require("express");
 const register = (registerUsecase) => async (req, res) => {
     const response = await registerUsecase(req.body);
     return res.set(response.headers).status(response.statusCode).send(response.body);
