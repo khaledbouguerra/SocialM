@@ -12,12 +12,19 @@ module.exports = function mongoDbService(Model) {
         return await Model.findOneAndUpdate(filter, data, { returnOriginal: false });
     };
 
+    const updateOneById = async (filter, data) => {
+        return await Model.findByIdAndUpdate(filter, data, { returnOriginal: false });
+    };
+
     const updateMany = async (filter, data) => {
         return await Model.updateMany(filter, data);
     };
 
     const deleteOne = async (filter) => {
         return await Model.deleteOne(filter);
+    };
+    const findOneByIdAndDelete = async (filter) => {
+        return await Model.findByIdAndDelete(filter);
     };
 
     const deleteMany = async (filter, options = {}) => {
@@ -36,6 +43,10 @@ module.exports = function mongoDbService(Model) {
         return await Model.findOne(filter);
     };
 
+    const findById = async (filter) => {
+        return await Model.findById(filter);
+    };
+
     const findMany = async (filter) => {
         return await Model.find(filter);
     };
@@ -51,12 +62,15 @@ module.exports = function mongoDbService(Model) {
         create,
         createMany,
         updateOne,
+        updateOneById,
         updateMany,
         deleteOne,
+        findOneByIdAndDelete,
         deleteMany,
         softDelete,
         softDeleteMany,
         findOne,
+        findById,
         findMany,
         count
     });
