@@ -10,7 +10,7 @@ export default function TopBar(){
         <div className="topbarContainer">
             <div className="topbarLeft">
                 <Link to='/' style={{textDecoration:"none"}}>
-                <span className="logo">LamaSocial</span>
+                <span className="logo">SocialM</span>
                 </Link>
             </div>
             <div className="topbarCenter">
@@ -21,8 +21,8 @@ export default function TopBar(){
             </div>
             <div className="topbarRight">
                 <div className="topbaarLinks">
-                    <span className="topbarLink">Homepage</span>
-                    <span className="topbarLink">TimeLine</span>
+{/*                    <span className="topbarLink">Homepage</span>
+                    <span className="topbarLink">TimeLine</span>*/}
                 </div>
                 <div className="topbarIcons">
                     <div className="topbarIconItem">
@@ -38,9 +38,12 @@ export default function TopBar(){
                         <span className="topbarIconBagde">30</span>
                     </div>
                 </div>
-                <Link to={'/profile/' + user.username}>
+                <Link to={'/profile/' + user.username} className='redirectToProfile'>
+                    <div className='userAvatarName'>
                 <img src={user?.profilePicture?PF+user.profilePicture:PF+'person/noAvatar.png'} alt="user avatar" className="topbarImg"/>
-                    </Link>
+                <span>{user.username}</span>
+                    </div>
+                </Link>
             </div>
         </div>
 
