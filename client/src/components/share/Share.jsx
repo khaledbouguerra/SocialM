@@ -32,7 +32,6 @@ export default function Share() {
                          }
                      })
              }catch (err) {
-                 console.log('error ', err);
              }
          }
          try{
